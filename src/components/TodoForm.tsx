@@ -2,18 +2,18 @@ import {NewTodoPayload} from "../types/todo";
 import FC, {useState} from "react";
 import {Box, Button, Grid, Paper, TextField} from "@mui/material";
 
-type Prosp = {
+type Props = {
     onSubmit: (newTodo: NewTodoPayload) => void
 }
 
-const TodoForm: FC<Prosp> = ({ onSubmit }) => {
-    const [edixText, setEditText] = useState('')
+const TodoForm: FC<Props> = ({ onSubmit }) => {
+    const [editText, setEditText] = useState('')
 
     const addTodoHandler = async () => {
-        if (!edixText) return
+        if (!editText) return
 
         onSubmit({
-            text: edixText,
+            text: editText,
         })
         setEditText('')
     }
@@ -26,7 +26,7 @@ const TodoForm: FC<Prosp> = ({ onSubmit }) => {
                         <TextField
                             label="new todo text"
                             variant="filled"
-                            value={edixText}
+                            value={editText}
                             onChange={(e) => setEditText(e.target.value)}
                             fullWidth
                         />
