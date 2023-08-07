@@ -24,7 +24,7 @@ const TodoList: FC<Props> = ({ todos, onUpdate }) => {
                         <Stack direction="row" alignItems="center">
                             <Checkbox
                                 checked={todo.completed}
-                                onChanged={() => handleCompletedCheckbox(todo)}
+                                onChange={() => handleCompletedCheckbox(todo)}
                             />
                             <Typography varient="body1">{todo.text}</Typography>
                         </Stack>
